@@ -1,132 +1,456 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Feast Has Not Started Yet</title>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<title>My Greatest Chapter Begins Now</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bg:#f7f4ee;--bg2:#ede8dc;--bg3:#faf7f1;
-  --forest:#1c3a2a;--forest2:#254d38;--forest3:#2f6347;
-  --ink:#1a1a18;--ink2:#3a3830;--muted:#7a7460;
-  --copper:#9e5c2a;--copper2:#c47a3e;
-  --rule:rgba(28,58,42,0.13);--rule2:rgba(28,58,42,0.06);
+
+/* ── LIGHT THEME ── */
+[data-theme="light"]{
+  --bg:#f7f4ee;
+  --bg2:#ede8dc;
+  --bg3:#faf7f1;
+  --bg4:#e8e2d6;
+  --hero-bg:#1c3a2a;
+  --hero-grad1:rgba(47,99,71,0.55);
+  --hero-grad2:rgba(20,40,30,0.7);
+  --text:#1a1a18;
+  --text2:#3a3830;
+  --text3:rgba(26,26,24,0.55);
+  --heading:#1c3a2a;
+  --muted:#7a7460;
+  --accent:#c47a3e;
+  --accent2:#9e5c2a;
+  --gold:#c47a3e;
+  --gold2:#9e5c2a;
+  --pull-bg:#ede8dc;
+  --pull-border:#2f6347;
+  --pull-text:#1c3a2a;
+  --pull-quote:rgba(28,58,42,0.1);
+  --rule:rgba(28,58,42,0.13);
+  --rule2:rgba(28,58,42,0.06);
+  --phrase-bg:#faf7f1;
+  --phrase-bg-h:#ede8dc;
+  --phrase-border:rgba(28,58,42,0.1);
+  --master-bg:#1c3a2a;
+  --master-bg-h:#254d38;
+  --master-text:#faf7f1;
+  --master-when:#c47a3e;
+  --ritual-bg:#1c3a2a;
+  --ritual-border:none;
+  --ritual-text:rgba(250,247,241,0.65);
+  --ritual-item-border:rgba(196,122,62,0.35);
+  --ritual-label:#c47a3e;
+  --ritual-top:rgba(196,122,62,0.7);
+  --int-border:rgba(28,58,42,0.2);
+  --int-border-f:rgba(28,58,42,0.5);
+  --int-text:#1c3a2a;
+  --int-ph:rgba(28,58,42,0.25);
+  --int-display:#ede8dc;
+  --int-display-border:#2f6347;
+  --int-btn-bg:#1c3a2a;
+  --int-btn-text:#faf7f1;
+  --int-btn-h:#254d38;
+  --dia-border:#c47a3e;
+  --dot-color:#2f6347;
+  --sec-rom:#c47a3e;
+  --sec-lbl:#7a7460;
+  --toggle-bg:#1c3a2a;
+  --toggle-text:#faf7f1;
+  --toggle-border:transparent;
+  --font-display:'Bodoni Moda',serif;
+  --font-body:'Crimson Pro',serif;
+  --font-ui:'Jost',sans-serif;
 }
-html{scroll-behavior:smooth;background:var(--bg)}
-body{color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:1.75;overflow-x:hidden}
 
-/* HERO */
-.hero{background:var(--forest);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 48px 80px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,rgba(47,99,71,0.55) 0%,transparent 65%),radial-gradient(ellipse 60% 40% at 50% 100%,rgba(20,40,30,0.7) 0%,transparent 60%);pointer-events:none}
-.hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.012) 60px);pointer-events:none}
+/* ── DARK THEME ── */
+[data-theme="dark"]{
+  --bg:#0c0c0b;
+  --bg2:#131310;
+  --bg3:#1a1a17;
+  --bg4:#222220;
+  --hero-bg:#0c0c0b;
+  --hero-grad1:rgba(201,168,76,0.06);
+  --hero-grad2:rgba(10,10,9,0.0);
+  --text:#f0ead6;
+  --text2:#d8d0b8;
+  --text3:rgba(240,234,214,0.5);
+  --heading:#f0ead6;
+  --muted:#6a6455;
+  --accent:#c9a84c;
+  --accent2:#e8d49a;
+  --gold:#c9a84c;
+  --gold2:#e8d49a;
+  --pull-bg:rgba(201,168,76,0.08);
+  --pull-border:#c9a84c;
+  --pull-text:#e8d49a;
+  --pull-quote:rgba(201,168,76,0.12);
+  --rule:rgba(201,168,76,0.14);
+  --rule2:rgba(201,168,76,0.06);
+  --phrase-bg:#131310;
+  --phrase-bg-h:#1a1a17;
+  --phrase-border:rgba(201,168,76,0.1);
+  --master-bg:linear-gradient(135deg,#1a1a17,#222220);
+  --master-bg-h:#222220;
+  --master-text:#e8d49a;
+  --master-when:#c9a84c;
+  --ritual-bg:#131310;
+  --ritual-border:1px solid rgba(201,168,76,0.15);
+  --ritual-text:rgba(240,234,214,0.6);
+  --ritual-item-border:rgba(201,168,76,0.3);
+  --ritual-label:#c9a84c;
+  --ritual-top:rgba(201,168,76,0.7);
+  --int-border:rgba(201,168,76,0.22);
+  --int-border-f:rgba(201,168,76,0.55);
+  --int-text:#e8d49a;
+  --int-ph:rgba(201,168,76,0.22);
+  --int-display:rgba(201,168,76,0.08);
+  --int-display-border:#c9a84c;
+  --int-btn-bg:transparent;
+  --int-btn-text:#c9a84c;
+  --int-btn-h:rgba(201,168,76,0.1);
+  --dia-border:#c9a84c;
+  --dot-color:#c9a84c;
+  --sec-rom:#c9a84c;
+  --sec-lbl:#6a6455;
+  --toggle-bg:rgba(240,234,214,0.08);
+  --toggle-text:#c9a84c;
+  --toggle-border:rgba(201,168,76,0.3);
+  --font-display:'Playfair Display',serif;
+  --font-body:'Crimson Pro',serif;
+  --font-ui:'Jost',sans-serif;
+}
+
+html{scroll-behavior:smooth;background:var(--bg);transition:background .5s ease}
+body{color:var(--text);font-family:var(--font-ui);font-weight:300;line-height:1.75;overflow-x:hidden;transition:color .5s ease,background .5s ease}
+
+/* ── THEME TOGGLE ── */
+.theme-toggle{
+  position:fixed;top:24px;right:28px;z-index:9000;
+  display:flex;align-items:center;gap:8px;
+  background:var(--toggle-bg);
+  color:var(--toggle-text);
+  border:1px solid var(--toggle-border);
+  padding:9px 18px 9px 14px;
+  font-family:var(--font-ui);font-size:10px;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;
+  cursor:pointer;
+  transition:all .35s ease;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.theme-toggle:hover{opacity:.8}
+.toggle-icon{font-size:14px;line-height:1;transition:transform .5s ease}
+[data-theme="dark"] .toggle-icon{transform:rotate(180deg)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--hero-bg);
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:100px 48px 80px;
+  position:relative;overflow:hidden;
+  transition:background .5s ease;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 55% at 50% 40%,var(--hero-grad1) 0%,transparent 65%),
+              radial-gradient(ellipse 60% 40% at 50% 100%,var(--hero-grad2) 0%,transparent 60%);
+  pointer-events:none;transition:background .5s ease;
+}
+[data-theme="light"] .hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(255,255,255,0.012) 60px);
+  pointer-events:none;
+}
+.star-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .6s ease}
+[data-theme="dark"] .star-field{opacity:1}
+.star{position:absolute;width:1px;height:1px;background:#e0d8c0;border-radius:50%;opacity:0;animation:twinkle var(--d,4s) ease-in-out infinite var(--dl,0s)}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:var(--op,.35)}}
+
 .h-inner{position:relative;z-index:1}
-.h-eye{font-family:'Jost',sans-serif;font-size:10px;font-weight:500;letter-spacing:.6em;text-transform:uppercase;color:var(--copper2);margin-bottom:2.8rem;opacity:0;animation:up 1s ease forwards .3s}
-.h-title{font-family:'Bodoni Moda',serif;font-size:clamp(58px,10.5vw,112px);font-weight:400;line-height:.95;color:#faf7f1;letter-spacing:-.02em;opacity:0;animation:up 1.2s ease forwards .5s}
-.h-title em{font-style:italic;color:var(--copper2);display:block}
-.h-rule{width:0;height:1px;background:var(--copper2);margin:2.8rem auto;animation:expand 1.2s ease forwards 1s}
-.h-quote{font-family:'Bodoni Moda',serif;font-size:clamp(17px,2.6vw,23px);font-style:italic;color:rgba(250,247,241,.72);max-width:480px;line-height:1.55;opacity:0;animation:up 1s ease forwards 1.1s}
-.h-sub{font-size:11px;font-weight:400;letter-spacing:.3em;color:rgba(250,247,241,.3);margin-top:2rem;opacity:0;animation:up 1s ease forwards 1.3s}
-.scroll-cue{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:up 1s ease forwards 1.8s;z-index:1}
-.scroll-cue span{font-size:8px;font-weight:500;letter-spacing:.55em;text-transform:uppercase;color:rgba(196,122,62,.55)}
-.scroll-bar{width:1px;height:44px;background:linear-gradient(to bottom,var(--copper2),transparent);animation:breathe 2.4s ease-in-out infinite 2s}
+.h-eye{
+  font-family:var(--font-ui);font-size:10px;font-weight:500;
+  letter-spacing:.6em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:2.8rem;opacity:0;animation:up 1s ease forwards .3s;
+}
+.h-title{
+  font-family:var(--font-display);
+  font-size:clamp(54px,10vw,108px);font-weight:400;
+  line-height:.95;letter-spacing:-.02em;
+  color:#faf7f1;
+  opacity:0;animation:up 1.2s ease forwards .5s;
+  transition:font-family .5s ease;
+}
+[data-theme="dark"] .h-title{color:#f0ead6}
+.h-title em{font-style:italic;color:var(--accent2);display:block}
+[data-theme="dark"] .h-title em{color:#e8d49a}
+.h-rule{
+  width:0;height:1px;
+  background:var(--accent);
+  margin:2.8rem auto;
+  animation:expand 1.2s ease forwards 1s;
+  transition:background .5s ease;
+}
+[data-theme="dark"] .h-rule{background:linear-gradient(to right,transparent,#c9a84c,transparent)}
+.h-quote{
+  font-family:var(--font-display);
+  font-size:clamp(17px,2.5vw,22px);font-style:italic;
+  color:rgba(250,247,241,.68);max-width:500px;line-height:1.55;
+  opacity:0;animation:up 1s ease forwards 1.1s;
+}
+[data-theme="dark"] .h-quote{color:rgba(240,234,214,.6)}
+.h-sub{
+  font-size:10px;font-weight:400;letter-spacing:.32em;
+  color:rgba(250,247,241,.28);margin-top:2rem;
+  opacity:0;animation:up 1s ease forwards 1.4s;
+}
+.scroll-cue{
+  position:absolute;bottom:38px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  opacity:0;animation:up 1s ease forwards 1.9s;z-index:1;
+}
+.scroll-cue span{font-size:8px;font-weight:500;letter-spacing:.55em;text-transform:uppercase;color:rgba(200,168,75,.45)}
+.scroll-bar{width:1px;height:44px;background:linear-gradient(to bottom,var(--accent),transparent);animation:breathe 2.5s ease-in-out infinite 2s}
 
-/* LAYOUT */
+/* ── WRAP ── */
 .wrap{max-width:780px;margin:0 auto;padding:108px 56px 140px}
 
-/* SECTION */
-.section{margin-bottom:80px;opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease}
+/* ── SECTIONS ── */
+.section{
+  margin-bottom:84px;opacity:0;transform:translateY(22px);
+  transition:opacity .9s ease,transform .9s ease;
+}
 .section.vis{opacity:1;transform:translateY(0)}
-.sec-meta{display:flex;align-items:center;gap:18px;margin-bottom:1.4rem}
-.sec-rom{font-family:'Bodoni Moda',serif;font-size:11px;font-style:italic;color:var(--copper);letter-spacing:.1em;flex-shrink:0}
-.sec-lbl{font-size:9px;font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:var(--muted)}
-.sec-ln{flex:1;height:1px;background:var(--rule)}
-.sec-h{font-family:'Bodoni Moda',serif;font-size:clamp(25px,3.8vw,36px);font-weight:400;line-height:1.3;color:var(--forest);margin-bottom:1.2rem;letter-spacing:-.01em}
-.sec-h em{font-style:italic;color:var(--copper)}
-.sec-b{font-size:15px;line-height:1.95;color:var(--ink2);font-weight:300}
+.sec-meta{display:flex;align-items:center;gap:18px;margin-bottom:1.5rem}
+.sec-rom{
+  font-family:var(--font-display);font-size:11px;font-style:italic;
+  color:var(--sec-rom);letter-spacing:.1em;flex-shrink:0;
+}
+.sec-lbl{font-size:9px;font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:var(--sec-lbl)}
+.sec-ln{flex:1;height:1px;background:var(--rule);transition:background .5s ease}
+.sec-h{
+  font-family:var(--font-display);
+  font-size:clamp(24px,3.8vw,36px);font-weight:400;line-height:1.3;
+  color:var(--heading);margin-bottom:1.2rem;letter-spacing:-.01em;
+  transition:color .5s ease,font-family .5s ease;
+}
+.sec-h em{font-style:italic;color:var(--accent)}
+.sec-b{
+  font-family:var(--font-body);
+  font-size:16px;line-height:1.95;color:var(--text3);font-weight:300;
+  transition:color .5s ease;
+}
 
-/* PULL */
-.pull{margin:2rem 0;padding:1.4rem 2rem 1.4rem 1.8rem;border-left:3px solid var(--forest3);background:var(--bg2);position:relative}
-.pull::before{content:'\201C';font-family:'Bodoni Moda',serif;font-size:68px;line-height:1;color:var(--forest);opacity:.1;position:absolute;top:-6px;left:12px}
-.pull p{font-family:'Libre Baskerville',serif;font-size:clamp(14px,2vw,18px);font-style:italic;color:var(--forest);line-height:1.65;position:relative}
+/* ── PULL ── */
+.pull{
+  margin:2rem 0;padding:1.4rem 2rem 1.4rem 1.8rem;
+  border-left:2px solid var(--pull-border);
+  background:var(--pull-bg);position:relative;
+  transition:all .5s ease;
+}
+.pull::before{
+  content:'\201C';font-family:var(--font-display);
+  font-size:68px;line-height:1;
+  color:var(--pull-quote);
+  position:absolute;top:-6px;left:12px;
+  font-style:normal;
+}
+.pull p{
+  font-family:var(--font-display);
+  font-size:clamp(14px,2vw,18px);font-style:italic;
+  color:var(--pull-text);line-height:1.65;position:relative;
+  transition:color .5s ease;
+}
 
-/* DIVIDER */
-.div{display:flex;align-items:center;gap:0;margin:60px 0}
-.div-ln{flex:1;height:1px;background:var(--rule)}
-.div-orn{padding:0 18px;display:flex;align-items:center;gap:7px}
-.d-sq{width:7px;height:7px;border:1px solid var(--copper);transform:rotate(45deg)}
-.d-dot{width:4px;height:4px;background:var(--forest3);border-radius:50%}
+/* ── DIVIDER ── */
+.div{display:flex;align-items:center;margin:64px 0}
+.div-ln{flex:1;height:1px;background:var(--rule);transition:background .5s ease}
+.div-orn{padding:0 18px;display:flex;align-items:center;gap:8px}
+.d-sq{width:7px;height:7px;border:1px solid var(--dia-border);transform:rotate(45deg);transition:border-color .5s ease}
+.d-dot{width:3px;height:3px;background:var(--dot-color);border-radius:50%;opacity:.7;transition:background .5s ease}
 
-/* PHRASES */
+/* ── PHRASES ── */
 .ph-hdr{text-align:center;margin-bottom:2.8rem}
-.ph-hdr p{font-family:'Bodoni Moda',serif;font-size:clamp(24px,3.6vw,34px);font-style:italic;color:var(--forest);line-height:1.3;margin-bottom:.5rem}
+.ph-hdr p{
+  font-family:var(--font-display);
+  font-size:clamp(24px,3.5vw,34px);font-style:italic;
+  color:var(--heading);line-height:1.3;margin-bottom:.5rem;
+  transition:color .5s ease,font-family .5s ease;
+}
 .ph-hdr span{font-size:9px;font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:var(--muted)}
-.phrases{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--rule2);border:1px solid var(--rule);margin-bottom:80px}
-.pc{background:var(--bg3);padding:26px 24px;transition:background .3s ease;cursor:default}
-.pc:hover{background:var(--bg2)}
-.pc-when{font-size:8.5px;font-weight:500;letter-spacing:.45em;text-transform:uppercase;color:var(--copper);margin-bottom:10px}
-.pc-txt{font-family:'Libre Baskerville',serif;font-size:clamp(14px,1.8vw,17px);font-style:italic;color:var(--forest);line-height:1.55}
-.pc.master{grid-column:1/-1;background:var(--forest);text-align:center;padding:42px 48px}
-.pc.master:hover{background:var(--forest2)}
-.pc.master .pc-when{color:var(--copper2)}
-.pc.master .pc-txt{font-size:clamp(19px,2.8vw,26px);color:#faf7f1}
+.phrases{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;margin-bottom:84px;
+  background:var(--rule2);
+  transition:background .5s ease;
+}
+.pc{
+  background:var(--phrase-bg);padding:26px 24px;
+  border:1px solid var(--phrase-border);
+  transition:background .35s ease,border-color .35s ease;cursor:default;
+}
+.pc:hover{background:var(--phrase-bg-h)}
+.pc-when{font-size:8.5px;font-weight:600;letter-spacing:.45em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;opacity:.8}
+.pc-txt{
+  font-family:var(--font-display);
+  font-size:clamp(14px,1.8vw,17px);font-style:italic;
+  color:var(--text);line-height:1.55;
+  transition:color .5s ease,font-family .5s ease;
+}
+.pc.master{
+  grid-column:1/-1;
+  background:var(--master-bg);
+  text-align:center;padding:44px 48px;
+  border:1px solid rgba(201,168,76,.18);
+  transition:background .35s ease;
+}
+.pc.master:hover{background:var(--master-bg-h)}
+.pc.master .pc-when{color:var(--master-when);opacity:1}
+.pc.master .pc-txt{font-size:clamp(19px,2.8vw,26px);color:var(--master-text)}
 
-/* RITUAL */
-.ritual{background:var(--forest);padding:56px 64px;margin-bottom:80px;position:relative;overflow:hidden;opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease}
+/* ── RITUAL ── */
+.ritual{
+  background:var(--ritual-bg);
+  border:var(--ritual-border);
+  padding:56px 64px;margin-bottom:84px;
+  position:relative;overflow:hidden;
+  opacity:0;transform:translateY(22px);
+  transition:opacity .9s ease,transform .9s ease,background .5s ease;
+}
 .ritual.vis{opacity:1;transform:translateY(0)}
-.ritual::before,.ritual::after{content:'';position:absolute;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,var(--copper2),transparent)}
-.ritual::before{top:0}.ritual::after{bottom:0}
-.ritual-eye{font-size:9px;font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:var(--copper2);margin-bottom:1.6rem}
-.ritual-title{font-family:'Bodoni Moda',serif;font-size:clamp(24px,3.5vw,34px);font-weight:400;line-height:1.25;color:#faf7f1;margin-bottom:1.4rem}
-.ritual-title em{font-style:italic;color:var(--copper2)}
-.ritual-items{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:2rem}
-.ri{border-left:2px solid rgba(196,122,62,.4);padding:.8rem 1.2rem}
-.ri-label{font-size:8px;font-weight:500;letter-spacing:.4em;text-transform:uppercase;color:rgba(196,122,62,.7);margin-bottom:.5rem}
-.ri-text{font-family:'Libre Baskerville',serif;font-size:14px;font-style:italic;color:rgba(250,247,241,.7);line-height:1.6}
+.ritual::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--ritual-top),transparent);
+}
+.ritual::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--ritual-top),transparent);
+}
+.ritual-eye{font-size:9px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;color:var(--ritual-label);margin-bottom:1.5rem;opacity:.9}
+.ritual-title{
+  font-family:var(--font-display);
+  font-size:clamp(24px,3.5vw,33px);font-weight:400;
+  line-height:1.25;color:#faf7f1;margin-bottom:2rem;
+  transition:font-family .5s ease;
+}
+[data-theme="dark"] .ritual-title{color:#f0ead6}
+.ritual-title em{font-style:italic;color:var(--accent2)}
+[data-theme="dark"] .ritual-title em{color:#e8d49a}
+.ritual-items{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ri{border-left:2px solid var(--ritual-item-border);padding:.8rem 1.2rem;transition:border-color .5s ease}
+.ri-label{font-size:8px;font-weight:600;letter-spacing:.4em;text-transform:uppercase;color:var(--ritual-label);margin-bottom:.5rem;opacity:.8}
+.ri-text{font-family:var(--font-body);font-size:15px;font-style:italic;color:var(--ritual-text);line-height:1.65;transition:color .5s ease}
 
-/* INTENTION */
-.intention{margin-bottom:80px;opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease}
+/* ── INTENTION ── */
+.intention{
+  margin-bottom:84px;opacity:0;transform:translateY(22px);
+  transition:opacity .9s ease,transform .9s ease;
+}
 .intention.vis{opacity:1;transform:translateY(0)}
-.int-lbl{font-size:9px;font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:var(--copper);margin-bottom:1.2rem;display:flex;align-items:center;gap:16px}
+.int-lbl{
+  font-size:9px;font-weight:600;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:16px;opacity:.9;
+}
 .int-lbl::after{content:'';flex:1;height:1px;background:var(--rule)}
-.int-title{font-family:'Bodoni Moda',serif;font-size:clamp(22px,3vw,30px);font-style:italic;color:var(--forest);margin-bottom:1.4rem}
-.int-area{width:100%;background:transparent;border:none;border-bottom:1.5px solid var(--rule);padding:16px 4px;font-family:'Libre Baskerville',serif;font-size:clamp(16px,2.2vw,20px);font-style:italic;color:var(--forest);outline:none;resize:none;min-height:80px;transition:border-color .3s ease;line-height:1.7}
-.int-area::placeholder{color:rgba(28,58,42,.3)}
-.int-area:focus{border-color:var(--copper)}
-.int-display{display:none;margin-top:1.5rem;padding:1.2rem 1.8rem;background:var(--bg2);border-left:3px solid var(--forest3)}
-.int-display p{font-family:'Bodoni Moda',serif;font-size:clamp(17px,2.5vw,22px);font-style:italic;color:var(--forest);line-height:1.6}
-.int-btn{margin-top:1rem;background:var(--forest);color:#faf7f1;border:none;padding:12px 32px;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;cursor:pointer;transition:background .3s ease}
-.int-btn:hover{background:var(--forest2)}
+.int-title{
+  font-family:var(--font-display);
+  font-size:clamp(20px,2.8vw,28px);font-style:italic;
+  color:var(--heading);margin-bottom:1.4rem;
+  transition:color .5s ease,font-family .5s ease;
+}
+.int-area{
+  width:100%;background:transparent;border:none;
+  border-bottom:1px solid var(--int-border);
+  padding:16px 4px;
+  font-family:var(--font-display);
+  font-size:clamp(16px,2.2vw,20px);font-style:italic;
+  color:var(--int-text);outline:none;resize:none;
+  min-height:80px;line-height:1.7;
+  caret-color:var(--accent);
+  transition:border-color .3s ease,color .5s ease;
+}
+.int-area::placeholder{color:var(--int-ph)}
+.int-area:focus{border-color:var(--int-border-f)}
+.int-display{
+  display:none;margin-top:1.5rem;padding:1.4rem 2rem;
+  background:var(--int-display);
+  border-left:2px solid var(--int-display-border);
+  transition:all .5s ease;
+}
+.int-display p{
+  font-family:var(--font-display);
+  font-size:clamp(17px,2.5vw,22px);font-style:italic;
+  color:var(--pull-text);line-height:1.65;
+}
+.int-btn{
+  margin-top:1.2rem;
+  background:var(--int-btn-bg);color:var(--int-btn-text);
+  border:1px solid var(--int-border-f);
+  padding:11px 32px;
+  font-family:var(--font-ui);font-size:10px;font-weight:600;
+  letter-spacing:.35em;text-transform:uppercase;
+  cursor:pointer;transition:all .3s ease;
+}
+.int-btn:hover{background:var(--int-btn-h);opacity:.85}
 
-/* CLOSING */
-.closing{text-align:center;opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease}
+/* ── CLOSING ── */
+.closing{
+  text-align:center;opacity:0;transform:translateY(22px);
+  transition:opacity .9s ease,transform .9s ease;
+}
 .closing.vis{opacity:1;transform:translateY(0)}
-.closing-title{font-family:'Bodoni Moda',serif;font-size:clamp(36px,6vw,64px);font-weight:400;line-height:1.15;color:var(--forest);margin-bottom:1.8rem;letter-spacing:-.02em}
-.closing-title em{font-style:italic;color:var(--copper)}
-.closing-b{font-size:15px;line-height:1.95;color:var(--muted);max-width:480px;margin:0 auto 3rem}
-.sig-rule{width:28px;height:1px;background:var(--copper);margin:0 auto 1.4rem}
-.sig{font-size:9px;font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:var(--muted)}
+.closing-title{
+  font-family:var(--font-display);
+  font-size:clamp(36px,6vw,64px);font-weight:400;
+  line-height:1.15;color:var(--heading);
+  margin-bottom:1.8rem;letter-spacing:-.02em;
+  transition:color .5s ease,font-family .5s ease;
+}
+.closing-title em{font-style:italic;color:var(--accent)}
+.closing-b{
+  font-family:var(--font-body);
+  font-size:17px;line-height:1.95;color:var(--muted);
+  max-width:500px;margin:0 auto 3.5rem;
+  transition:color .5s ease;
+}
+.sig-rule{width:60px;height:1px;background:var(--rule);margin:0 auto 1.6rem;transition:background .5s ease}
+.sig{font-size:9px;font-weight:500;letter-spacing:.5em;text-transform:uppercase;color:var(--muted);opacity:.6}
 
+/* ── ANIMATIONS ── */
 @keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes expand{from{opacity:0;width:0}to{opacity:1;width:48px}}
-@keyframes breathe{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes expand{from{opacity:0;width:0}to{opacity:1;width:60px}}
+@keyframes breathe{0%,100%{opacity:.3}50%{opacity:.9}}
 
-@media(max-width:580px){
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
   .wrap{padding:72px 28px 100px}
   .ritual{padding:40px 28px}
   .ritual-items{grid-template-columns:1fr}
   .phrases{grid-template-columns:1fr}
   .pc.master{grid-column:1}
+  .theme-toggle{top:16px;right:16px;padding:8px 14px}
 }
 </style>
 </head>
 <body>
 
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span class="toggle-icon" id="toggleIcon">☀︎</span>
+  <span id="toggleLabel">Light</span>
+</button>
+
+<!-- HERO -->
 <section class="hero">
+  <div class="star-field" id="stars"></div>
   <div class="h-inner">
     <p class="h-eye">A Personal Manifesto</p>
-    <h1 class="h-title">The Feast<br>Has Not<br><em>Started Yet.</em></h1>
+    <h1 class="h-title">My Greatest<br>Chapter<br><em>Begins Now.</em></h1>
     <div class="h-rule"></div>
     <p class="h-quote">"I am not behind. I am loading."</p>
     <p class="h-sub">Read this whenever you forget who you are becoming</p>
@@ -136,77 +460,89 @@ body{color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:
 
 <main class="wrap">
 
+  <!-- I -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">I</span><span class="sec-lbl">On Who You Are</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">You were not built for comfort. You were built for something that has <em>not happened yet.</em></h2>
-    <p class="sec-b">The blood in you carries generations who built something from nothing — who endured without applause and chose to keep going. The hunger you feel is not a flaw. It is a signal. The most important signal of your life. Do not silence it.</p>
+    <p class="sec-b">The blood in you carries generations who built something from nothing — who endured without applause and chose, quietly, to keep going. The hunger you feel is not a flaw. It is a signal. The most important signal of your life. Do not silence it.</p>
     <div class="pull"><p>"My potential is not a ceiling. It is a direction."</p></div>
   </div>
 
+  <!-- II -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">II</span><span class="sec-lbl">On Potential</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">The gap between who you are and who you could be is not shame. It is the most <em>exciting territory</em> that exists.</h2>
-    <p class="sec-b">Most people stand at the edge of that gap their whole lives — looking in, never crossing. Not because they lack ability, but because they never made the decision. Make it now. Clear. Firm. Irrevocable.</p>
+    <p class="sec-b">Most people stand at the edge of that gap their whole lives — looking in, never crossing. Not from lack of ability, but from lack of decision. Make it now. Clear. Firm. Irrevocable. This moment is as good as any that will ever come.</p>
   </div>
 
   <div class="div"><div class="div-ln"></div><div class="div-orn"><div class="d-dot"></div><div class="d-sq"></div><div class="d-dot"></div></div><div class="div-ln"></div></div>
 
+  <!-- III -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">III</span><span class="sec-lbl">On the Age You Live In</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">You live at the most <em>leveraged moment</em> in all of human history.</h2>
-    <p class="sec-b">AI, information, global reach — these are not distractions. They are force multipliers. A person with hunger, judgment, and these tools is one of the most capable humans who has ever existed. That person is you. Right now. Act like it.</p>
+    <p class="sec-b">AI, information, global reach — not distractions. Force multipliers. A person with hunger, judgment, and these tools is among the most capable humans ever to walk this earth. That person is you. Right now. Act like it.</p>
     <div class="pull"><p>"AI does not replace me. It multiplies me."</p></div>
   </div>
 
+  <!-- IV -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">IV</span><span class="sec-lbl">On Abundance</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">Abundance is not the destination. Abundance is <em>the lens.</em></h2>
-    <p class="sec-b">When you look through scarcity you shrink — playing not to lose. When you shift to abundance — what you have, what you have survived, what is available today — everything opens. You take smarter risks. You radiate more. You attract more.</p>
+    <p class="sec-b">Through scarcity you shrink — playing not to lose. Through abundance — what you have, what you have survived, what is available today — everything opens. You take smarter risks. You give more. You radiate more. You attract more.</p>
     <div class="pull"><p>"I do not chase abundance. I recognise it. It was here all along."</p></div>
   </div>
 
   <div class="div"><div class="div-ln"></div><div class="div-orn"><div class="d-dot"></div><div class="d-sq"></div><div class="d-dot"></div></div><div class="div-ln"></div></div>
 
+  <!-- V -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">V</span><span class="sec-lbl">On Money and Freedom</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">Financial freedom is not about being rich. It is about <em>never being trapped.</em></h2>
-    <p class="sec-b">Every dollar saved and invested with intention is a vote for your future freedom. Cut what drains you. Build what grows you. Your financial life must be designed — not defaulted into. What you build does not end with you. It begins with you.</p>
+    <p class="sec-b">Every dollar saved with intention is a vote for your future freedom. Cut what drains you. Build what grows you. Your financial life must be designed — not defaulted into. What you build does not end with you. It begins with you.</p>
     <div class="pull"><p>"I build wealth not for status. I build it for freedom — and for the ones I love."</p></div>
   </div>
 
+  <!-- VI -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">VI</span><span class="sec-lbl">On Your Body</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">Your body is the only hardware you will ever run your entire life on. <em>Honour it.</em></h2>
-    <p class="sec-b">Every breakthrough, every joy, every great idea runs through this one body. Move consistently. Sleep seriously. Eat with intention. The energy you invest here returns multiplied — in sharper thinking, steadier will, and a longer, fuller life.</p>
+    <p class="sec-b">Every breakthrough, every joy, every great idea runs through this one body. Move consistently. Sleep seriously. Eat with intention. The energy you invest here returns multiplied — in sharper thinking, steadier will, and a longer, richer life.</p>
     <div class="pull"><p>"My body is not a liability I manage. It is the vehicle to everything I want."</p></div>
   </div>
 
   <div class="div"><div class="div-ln"></div><div class="div-orn"><div class="d-dot"></div><div class="d-sq"></div><div class="d-dot"></div></div><div class="div-ln"></div></div>
 
+  <!-- VII -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">VII</span><span class="sec-lbl">On Career and Purpose</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">The career you want is on the other side of doing the work <em>no one else wants to do yet.</em></h2>
-    <p class="sec-b">You need a next step — not a perfect plan. Build your reputation one kept promise at a time. Show up with full presence where others give half. That gap is where careers are made and where purpose quietly reveals itself.</p>
+    <p class="sec-b">You need a next step — not a perfect plan. Build your reputation one kept promise at a time. Show up with full presence where others give half. That gap is where careers are made and purpose quietly reveals itself.</p>
     <div class="pull"><p>"I do not perform success. I build it — quietly, boldly, on my own terms."</p></div>
   </div>
 
+  <!-- VIII -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">VIII</span><span class="sec-lbl">On People and Your Circle</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">The people closest to you will either <em>compound your growth</em> — or quietly drain it.</h2>
-    <p class="sec-b">This is not cruelty. It is physics. Energy is transferred between people constantly. Guard yours with the same seriousness you bring to your finances. Give generously to those who lift you. Quietly reduce time with those who dim you. Your circle is your compounding environment.</p>
-    <div class="pull"><p>"I choose people who make me more, not less, of who I am becoming."</p></div>
+    <p class="sec-b">This is not cruelty. It is physics. Energy transfers between people constantly. Guard yours with the same care you bring to your finances. Give generously to those who lift you. Your circle is your compounding environment.</p>
+    <div class="pull"><p>"I choose people who make me more of who I am becoming."</p></div>
   </div>
 
+  <!-- IX -->
   <div class="section">
     <div class="sec-meta"><span class="sec-rom">IX</span><span class="sec-lbl">On Hard Days</span><div class="sec-ln"></div></div>
     <h2 class="sec-h">The feeling of standing still is the most <em>deceptive feeling</em> there is.</h2>
-    <p class="sec-b">It arrives when the most important invisible growth is happening underground — in the roots, before any flower. You are allowed to be tired. You are not allowed to quit on yourself. Rest. Then come back. Every success was built by someone who refused to make their hardest day their last day.</p>
+    <p class="sec-b">It arrives when the most important invisible growth is happening underground — in the roots, before any flower. You are allowed to be tired. You are not allowed to quit on yourself. Rest. Then come back. Every success was built by someone who refused to make their hardest day their last.</p>
     <div class="pull"><p>"I was not born soft. I was built to last."</p></div>
   </div>
 
   <!-- PHRASES -->
   <div class="div"><div class="div-ln"></div><div class="div-orn"><div class="d-dot"></div><div class="d-sq"></div><div class="d-dot"></div></div><div class="div-ln"></div></div>
-  <div class="ph-hdr"><p>Your Catchphrases</p><span>Carry these. Say them aloud. Return to them.</span></div>
+  <div class="ph-hdr">
+    <p>Your Catchphrases</p>
+    <span>Carry these. Say them aloud. Return to them.</span>
+  </div>
   <div class="phrases">
     <div class="pc"><div class="pc-when">When you feel behind</div><div class="pc-txt">"I am not behind. I am loading."</div></div>
     <div class="pc"><div class="pc-when">On potential</div><div class="pc-txt">"My potential is not a ceiling. It is a direction."</div></div>
@@ -216,7 +552,7 @@ body{color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:
     <div class="pc"><div class="pc-when">On your body</div><div class="pc-txt">"My body is the vehicle to everything I want."</div></div>
     <div class="pc"><div class="pc-when">On your circle</div><div class="pc-txt">"I choose people who make me more of who I am becoming."</div></div>
     <div class="pc"><div class="pc-when">On hard days</div><div class="pc-txt">"I was not born soft. I was built to last."</div></div>
-    <div class="pc master"><div class="pc-when">The master phrase — say it every morning</div><div class="pc-txt">"The feast has not started. I am just sitting down."</div></div>
+    <div class="pc master"><div class="pc-when">The master phrase — say it every morning</div><div class="pc-txt">"My greatest chapter begins now. And now. And now."</div></div>
   </div>
 
   <!-- RITUAL -->
@@ -253,9 +589,31 @@ body{color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:
 </main>
 
 <script>
-const io = new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.1});
+// ── SCROLL REVEAL ──
+const io = new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})
+},{threshold:.1});
 document.querySelectorAll('.section,.ritual,.intention,.closing').forEach(el=>io.observe(el));
 
+// ── STARS ──
+const sf = document.getElementById('stars');
+for(let i=0;i<90;i++){
+  const s=document.createElement('div');
+  s.className='star';
+  s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${3+Math.random()*5}s;--dl:${Math.random()*7}s;--op:${.12+Math.random()*.4}`;
+  sf.appendChild(s);
+}
+
+// ── THEME TOGGLE ──
+function toggleTheme(){
+  const html = document.documentElement;
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('toggleIcon').textContent = isDark ? '☀︎' : '☽';
+  document.getElementById('toggleLabel').textContent = isDark ? 'Light' : 'Dark';
+}
+
+// ── INTENTION ──
 function setIntention(){
   const val = document.getElementById('intentionInput').value.trim();
   if(!val) return;
